@@ -4,16 +4,14 @@
 
 >
     <% @items.each do |item| %>
-      <tr>
+      <br>
         <%= item.item %>
         
-        <%= link_to 'Edit', edit_item_path(item) %>
-        <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_item_path(item) %>
+        <%= link_to '<i class="fas fa-check"></i>'.html_safe, 
+        item, method: :delete, data: { confirm: 'Are you sure?' } %>
       
     <% end %>
-  
-
-
 <br>
 
 <%= link_to 'New Item', new_item_path %>
